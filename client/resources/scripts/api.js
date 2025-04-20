@@ -1,24 +1,21 @@
 const cwid = "12295992"; //please update with your cwid
-const baseUrl = "https://pa6-backend.herokuapp.com/api/books/"+cwid;
-var bookList = [];
-var myBook = {};
+const baseUrl = "http://localhost:5240/api/character";
+var charList = [];
+var myChar = {};
 
-function populateList(){
+async function populateList(){
 
-    const allBooksApiUrl = baseUrl;
-    fetch(allBooksApiUrl).then(function(response){
-        return response.json();
-    }).then(function(json){
-        bookList = json;
-        let html = "<select class = \"listBox\" onchange = \"handleOnChange()\" id= \"selectListBox\" name = \"list_box\" size=5 width=\"100%\">";
-        json.forEach((book)=>{
-            html += "<option value = " + book.id  + ">" + book.title + "</option>";
-        })
+    const allCharApiUrl = baseUrl;
+    let response = await fetch(allCharApiUrl);
+    let json = await response.json();
+
+    let html = "<select class = \"listBox\" onchange = \"handleOnChange()\" id= \"selectListBox\" name = \"list_box\" size=5 width=\"100%\">";
+    json.forEach((char)=>{
+        html += "<option value = " + char.jediId  + ">" + char.name + "</option>";
+     })
         html += "</select>";
-        document.getElementById("listBox").innerHTML = html;
-    }).catch(function(error){
-        console.log(error);
-    });
+    document.getElementById("listBox").innerHTML = html;
+
 }
 
 function putBook(id){
