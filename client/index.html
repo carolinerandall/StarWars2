@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel ="stylesheet" href = "./resources/styles/index.css">
+    <title>Bootstrap demo</title>
+  </head>
+  <body onload  = "handleOnLoad()">
+
+  </body>
+  <!-- <body>
+    <h1>Star Wars Wikipedia</h1>
+  </body> -->
+    <script src = "./resources/scripts/api.js"></script>
+    <script src = "./resources/scripts/index.js"></script>
+    <div class="jumbotron">
+        <h1>Star Wars Wikipedia System</h1>
+    </div>
+
+    <div class = "container">
+        <div class = "row"> 
+            <div class = "col-md-3">
+                <h3>Jedi</h3>
+                <div id = "listBox"></div>
+            </div>
+            <div class = "col-md-6">
+                <h3>Character Information</h3>
+                <h3 class = "inputHeader"></h3>
+                <form onsubmit = "return false;" method = "post">
+                    <label for="name">Name:</label>
+                    <input type = "text" id = "name" name = "name" readOnly><br><br>
+                    <label for = "home">Home:</label>
+                    <input type = "text" id = "home" name = "home" readOnly><br><br>
+                    <label for = "gender">Gender:</label>
+                    <input type = "text" id = "gender" name = "gender" readOnly><br><br>
+                    <label for = "age">Age:</label>
+                    <input type = "text" id = "age" name = "age" readOnly><br><br>
+                    <label for = "rank">Rank:</label>
+                    <input type = "text" id = "rank" name = "rank" readOnly><br><br>
+                    <label for = "nickname">Nickname:</label>
+                    <input type = "text" id = "nickname" name = "nickname" readOnly><br><br>
+                    <label for = "master">Master:</label>
+                    <input type = "text" id = "master" name = "master" readOnly><br><br>
+                    <label for = "padawan">Padawan:</label>
+                    <input type = "text" id = "padawan" name = "padawan" readOnly><br><br>
+                    <label for = "characterCover"> Character URL</label>
+                    <input type = "text" id = "characterCover" name = "cover" readOnly><br><br>
+                </form>
+                <div class = "btnRow">
+                    <button id = "newButton" class ="btn btn-primary" onclick = "handleNewClick()">New</button>
+                    <button id = "editButton" class = "btn btin-primary" onclicl = "handleEditClick()">Edit</button>
+                    <button id = "deleteButton" class = "btn btn-primary" onclick = "handleDeleteClick()">Delete</button>
+                    <br>
+                    <span id ="saveButton"></span>
+
+                </div>
+            </div>
+            <div class = "col-md-3">
+                <h3>Picture</h3>
+                <div id = "picBox"></div>
+            </div>
+        </div>
+    </div>
+</html>

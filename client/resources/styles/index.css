@@ -1,0 +1,33 @@
+/* Updated the .jumbotron class to align headers horizontally */
+.jumbotron {
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Align items horizontally */
+    gap: 1rem; /* Add spacing between headers */
+    padding: 5rem; /* Add padding for better spacing */
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Updated the .container and .row classes to keep columns at the top and evenly spaced horizontally */
+.container {
+    display: flex;
+    justify-content: space-evenly; /* Evenly space out the columns horizontally */
+    align-items: flex-start; /* Keep columns aligned at the top */
+    flex-direction: row;
+    gap: 1rem; /* Adjust spacing between columns */
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; /* Ensure rows are evenly spaced horizontally */
+    align-items: flex-start; /* Keep rows aligned at the top */
+}
+.inputHeader{
+    text-align: left;
+    padding-left:100px;
+    
+}
