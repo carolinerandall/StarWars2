@@ -1,0 +1,15 @@
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\bin\Debug\net9.0\codingchallenge.exe
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\bin\Debug\net9.0\codingchallenge.deps.json
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\bin\Debug\net9.0\codingchallenge.runtimeconfig.json
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\bin\Debug\net9.0\codingchallenge.dll
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\bin\Debug\net9.0\codingchallenge.pdb
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\codingchallenge.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\codingchallenge.AssemblyInfoInputs.cache
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\codingchallenge.AssemblyInfo.cs
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\codingchallenge.csproj.CoreCompileInputs.cache
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\codingchallenge.sourcelink.json
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\codingchallenge.dll
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\refint\codingchallenge.dll
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\codingchallenge.pdb
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\codingchallenge.genruntimeconfig.cache
+C:\Users\carol\OneDrive\Documents\Source\repos\mis221\codingchallenge\obj\Debug\net9.0\ref\codingchallenge.dll

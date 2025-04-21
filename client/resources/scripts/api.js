@@ -18,19 +18,23 @@ async function populateList(){
 
 }
 
-function putBook(id){
-    const putBookApiUrl = baseUrl + "/"+id;
-    const sendBook = {
-        id: id,
-        title: document.getElementById("bookTitle").value,
-        author: document.getElementById("bookAuthor").value,
-        genre: document.getElementById("bookGenre").value,
-        numAvlb: parseInt(document.getElementById("bookAvlb").value),
-        isbn: document.getElementById("bookIsbn").value,
-        length: parseInt(document.getElementById("bookLength").value),
-        cover: document.getElementById("bookCover").value
+function putChar(id){
+    const putCharApiUrl = baseUrl + "/"+id;
+    const sendChar = {
+        JediId: jediId,
+        name: document.getElementById("name").value,
+        lightsaberColor: document.getElementById("lightsaberColor").value,
+        home: document.getElementById("home").value,
+        born: document.getElementById("born").value,
+        gender: document.getElementById("gender").value,
+        rank: document.getElementById("rank").value,
+        nickname: document.getElementById("nickname").value,
+        master: document.getElementById("master").value,
+        padawan: document.getElementById("padawan").value,
+        characterURL: document.getElementById("characterURL").value,
+
     }
-    fetch(putBookApiUrl, {
+    fetch(putCharApiUrl, {
         method: "PUT",
         headers: {
             "Accept": 'application/json',
@@ -39,41 +43,44 @@ function putBook(id){
         body: JSON.stringify(sendBook)
     })
     .then((response)=>{
-        myBook = sendBook;
+        myChar = sendChar;
         populateList();
         populateForm();
     });
 }
 
-function postBook(){
-    const postBookApiUrl = baseUrl;
-    const sendBook = {
-        title: document.getElementById("bookTitle").value,
-        author: document.getElementById("bookAuthor").value,
-        genre: document.getElementById("bookGenre").value,
-        numAvlb: parseInt(document.getElementById("bookAvlb").value),
-        isbn: document.getElementById("bookIsbn").value,
-        length: parseInt(document.getElementById("bookLength").value),
-        cover: document.getElementById("bookCover").value
+function postChar(){
+    const postCharApiUrl = baseUrl;
+    const sendChar = {
+        name: document.getElementById("name").value,
+        lightsaberColor: document.getElementById("lightsaberColor").value,
+        home: document.getElementById("home").value,
+        born: document.getElementById("born").value,
+        gender: document.getElementById("gender").value,
+        rank: document.getElementById("rank").value,
+        nickname: document.getElementById("nickname").value,
+        master: document.getElementById("master").value,
+        padawan: document.getElementById("padawan").value,
+        characterURL: document.getElementById("characterURL").value,
     }
-    fetch(postBookApiUrl, {
+    fetch(postCharApiUrl, {
         method: "POST",
         headers: {
             "Accept": 'application/json',
             "Content-Type": 'application/json',
         },
-        body: JSON.stringify(sendBook)
+        body: JSON.stringify(sendChar)
     })
     .then((response)=>{
-        myBook = sendBook;
+        myChar = sendChar;
         populateList();
         blankFields();
     });
 }
 
-function deleteBook(){
-    const deleteBookApiUrl = baseUrl + "/" + myBook.id;
-    fetch(deleteBookApiUrl, {
+function deleteChar(){
+    const deleteCharApiUrl = baseUrl + "/" + myChar.id;
+    fetch(deleteCharApiUrl, {
         method: "DELETE",
         headers: {
             "Accept": 'application/json',

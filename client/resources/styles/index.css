@@ -31,3 +31,26 @@
     padding-left:100px;
     
 }
+.btnRow{
+    padding-left:100px;
+}
+
+.btnBottom{
+    margin-top: 20px;
+}
+
+label {
+    display: inline-blovk;
+    clear: left;
+    width: 100px;
+    text-align: right;
+}
+
+input{
+    display: inline-block;
+}
+
+.characterURL{
+    max-Width: 250px;
+    height:auto;
+}
