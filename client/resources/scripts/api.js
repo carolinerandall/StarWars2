@@ -8,6 +8,7 @@ async function populateList(){
     const allCharApiUrl = baseUrl;
     let response = await fetch(allCharApiUrl);
     let json = await response.json();
+    charList = json
 
     let html = "<select class = \"listBox\" onchange = \"handleOnChange()\" id= \"selectListBox\" name = \"list_box\" size=5 width=\"100%\">";
     json.forEach((char)=>{
