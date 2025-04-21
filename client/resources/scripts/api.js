@@ -53,33 +53,42 @@ function putChar(id){
     });
 }
 
-function postChar(){
+async function postChar() {
     const postCharApiUrl = baseUrl;
     const sendChar = {
-        name: document.getElementById("name").value,
-        lightsaberColor: document.getElementById("lightsaberColor").value,
-        home: document.getElementById("home").value,
-        born: document.getElementById("born").value,
-        gender: document.getElementById("gender").value,
-        rank: document.getElementById("rank").value,
-        nickname: document.getElementById("nickname").value,
-        master: document.getElementById("master").value,
-        padawan: document.getElementById("padawan").value,
-        characterURL: document.getElementById("characterURL").value,
+        JediId: parseInt(document.getElementById("jediId").value) || 0, // Default to 0 if no ID is provided
+        Name: document.getElementById("name").value,
+        LightsaberColor: document.getElementById("lightsaberColor").value,
+        Homeworld: document.getElementById("home").value,
+        Born: document.getElementById("born").value,
+        Gender: document.getElementById("gender").value,
+        Rank: document.getElementById("rank").value,
+        NickName: document.getElementById("nickname").value,
+        Master: document.getElementById("master").value,
+        Padawan: document.getElementById("padawan").value,
+        CharacterURL: document.getElementById("characterURL").value,
+    };
+
+    try {
+        const response = await fetch(postCharApiUrl, {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(sendChar),
+        });
+
+        if (response.ok) {
+            myChar = sendChar;
+            populateList();
+            blankFields();
+        } else {
+            console.error("Failed to save Jedi:", response.statusText);
+        }
+    } catch (error) {
+        console.error("Error during POST request:", error);
     }
-    fetch(postCharApiUrl, {
-        method: "POST",
-        headers: {
-            "Accept": 'application/json',
-            "Content-Type": 'application/json',
-        },
-        body: JSON.stringify(sendChar)
-    })
-    .then((response)=>{
-        myChar = sendChar;
-        populateList();
-        blankFields();
-    });
 }
 
 function deleteChar(){

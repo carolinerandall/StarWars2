@@ -54,9 +54,23 @@ function handleNewSave(){
     blankFields();
     //handleOnLoad();
 }
+
+function handleCancelSave() {
+    makeReadOnly();
+    showButtons();
+    blankFields();
+}
+
+function handleSaveClick() {
+    console.log("Save button clicked");
+    // Add logic for saving data here
+    makeReadOnly();
+    showButtons();
+}
+
 function populateForm(){
     console.log(myChar)
-    // document.getElementById("jediId").value =myChar.jediId;
+    document.getElementById("jediId").value =myChar.jediId;
     document.getElementById("name").value =myChar.name;
     document.getElementById("lightsaberColor").value =myChar.lightsaberColor;
     document.getElementById("home").value =myChar.homeworld;
@@ -66,8 +80,8 @@ function populateForm(){
     document.getElementById("nickname").value =myChar.nickName;
     document.getElementById("master").value =myChar.master;
     document.getElementById("padawan").value =myChar.padawan;
-    document.getElementById("characterCover").value =myChar.characterURL;
-    var html = "<img class = \"coverArt\" src = \""+myChar.characterURL+"\"></img>";
+    document.getElementById("characterURL").value =myChar.characterURL;
+    var html = "<img class = \"characterURL\" src = \""+myChar.characterURL+"\"></img>";
     document.getElementById("picBox").innerHTML = html;
 }
 
@@ -87,7 +101,7 @@ function showButtons(){
 }
 
 function makeEditable(){
-    //document.getElementById("jeidiId").readOnly = false;
+    document.getElementById("jediId").readOnly = false;
     document.getElementById("name").readOnly = false;
     document.getElementById("lightsaberColor").readOnly = false;
     document.getElementById("home").readOnly = false;

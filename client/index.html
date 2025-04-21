@@ -39,26 +39,28 @@
                 <h3>Character Information</h3>
                 <h3 class = "inputHeader"></h3>
                 <form onsubmit = "return false;" method = "post">
+                    <label for="jediId">Jedi ID:</label>
+                    <input type="text" id="jediId" placeholder="Enter Jedi ID" readonly><br><br>
                     <label for="name">Name:</label>
-                    <input type = "text" id = "name" name = "name" readOnly><br><br>
-                    <label for = "lightsaberColor">Lightsaber Color:</label>
-                    <input type = "text" id = "lightsaberColor" name = "lightsaberColor" readOnly><br><br>
-                    <label for = "home">Home:</label>
-                    <input type = "text" id = "home" name = "home" readOnly><br><br>
-                    <label for = "gender">Gender:</label>
-                    <input type = "text" id = "gender" name = "gender" readOnly><br><br>
-                    <label for = "born">Age:</label>
-                    <input type = "text" id = "born" name = "born" readOnly><br><br>
-                    <label for = "rank">Rank:</label>
-                    <input type = "text" id = "rank" name = "rank" readOnly><br><br>
-                    <label for = "nickname">Nickname:</label>
-                    <input type = "text" id = "nickname" name = "nickname" readOnly><br><br>
-                    <label for = "master">Master:</label>
-                    <input type = "text" id = "master" name = "master" readOnly><br><br>
-                    <label for = "padawan">Padawan:</label>
-                    <input type = "text" id = "padawan" name = "padawan" readOnly><br><br>
-                    <label for = "characterCover"> Character URL</label>
-                    <input type = "text" id = "characterCover" name = "cover" readOnly><br><br>
+                    <input type="text" id="name" placeholder="Enter Name" readonly><br><br>
+                    <label for="lightsaberColor">Lightsaber Color:</label>
+                    <input type="text" id="lightsaberColor" placeholder="Enter Lightsaber Color" readonly><br><br>
+                    <label for="home">Home:</label>
+                    <input type="text" id="home" placeholder="Enter Home" readonly><br><br>
+                    <label for="born">Born:</label>
+                    <input type="text" id="born" placeholder="Enter Born" readonly><br><br>
+                    <label for="gender">Gender:</label>
+                    <input type="text" id="gender" placeholder="Enter Gender" readonly><br><br>
+                    <label for="rank">Rank:</label>
+                    <input type="text" id="rank" placeholder="Enter Rank" readonly><br><br>
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" id="nickname" placeholder="Enter Nickname" readonly><br><br>
+                    <label for="master">Master:</label>
+                    <input type="text" id="master" placeholder="Enter Master" readonly><br><br>
+                    <label for="padawan">Padawan:</label>
+                    <input type="text" id="padawan" placeholder="Enter Padawan" readonly><br><br>
+                    <label for="characterURL">Character URL:</label>
+                    <input type="text" id="characterURL" placeholder="Enter Character URL" readonly><br><br>
                 </form>
                 <div class = "btnRow">
                     <button id = "newButton" class ="btn btn-primary" onclick = "handleNewClick()">New</button>
