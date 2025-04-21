@@ -7,11 +7,22 @@
     <title>Bootstrap demo</title>
   </head>
   <body onload  = "handleOnLoad()">
+    <audio id="cantinaSong">
+        <source src="./Star Wars - Cantina Song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-  </body>
-  <!-- <body>
-    <h1>Star Wars Wikipedia</h1>
-  </body> -->
+    <script>
+        // Play audio on first click anywhere on the page
+        document.body.addEventListener('click', function() {
+            let audio = document.getElementById('cantinaSong');
+            if (audio) {
+                audio.play().catch((error) => {
+                    console.error('Error playing audio:', error);
+                });
+            }
+        });
+    </script>
     <script src = "./resources/scripts/api.js"></script>
     <script src = "./resources/scripts/index.js"></script>
     <div class="jumbotron">
@@ -30,10 +41,10 @@
                 <form onsubmit = "return false;" method = "post">
                     <label for="name">Name:</label>
                     <input type = "text" id = "name" name = "name" readOnly><br><br>
-                    <label for = "home">Home:</label>
-                    <input type = "text" id = "home" name = "home" readOnly><br><br>
                     <label for = "lightsaberColor">Lightsaber Color:</label>
                     <input type = "text" id = "lightsaberColor" name = "lightsaberColor" readOnly><br><br>
+                    <label for = "home">Home:</label>
+                    <input type = "text" id = "home" name = "home" readOnly><br><br>
                     <label for = "gender">Gender:</label>
                     <input type = "text" id = "gender" name = "gender" readOnly><br><br>
                     <label for = "born">Age:</label>
@@ -51,8 +62,9 @@
                 </form>
                 <div class = "btnRow">
                     <button id = "newButton" class ="btn btn-primary" onclick = "handleNewClick()">New</button>
-                    <button id = "editButton" class = "btn btin-primary" onclicl = "handleEditClick()">Edit</button>
+                    <button id = "editButton" class = "btn btin-primary" onclick = "handleEditClick()">Edit</button>
                     <button id = "deleteButton" class = "btn btn-primary" onclick = "handleDeleteClick()">Delete</button>
+                    <button id = "saveButton" class = "btn btn-primary" onclick = "handleSaveClick()">Save</button>
                     <br>
                     <span id ="saveButton"></span>
 
@@ -64,4 +76,10 @@
             </div>
         </div>
     </div>
+
+  </body>
+  <!-- <body>
+    <h1>Star Wars Wikipedia</h1>
+  </body> -->
+   
 </html>

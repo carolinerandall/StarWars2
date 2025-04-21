@@ -3,6 +3,7 @@ function handleOnLoad(){
 }
 
 
+
 function handleOnChange(){
     const selectedID = document.getElementById("selectListBox").value;
     console.log('the id is ', selectedID)
@@ -15,19 +16,54 @@ function handleOnChange(){
     populateForm();
 }
 
+function handleEditClick(){
+    makeEditable();
+    hideButtons();
+    var buttonHtml = "<button class=\"btn btn-primary btn-lg\" onclick=\"handleEditSave("+myChar.jediId+")\">Save</button>";
+    buttonHtml += "<button class=\"btn btn-warning btn-lg btn-cancle\" onclick=\"handleCancelSave()\">Cancel</button>";
+    document.getElementById("saveButton").innerHTML = buttonHtml;
+    document.getElementById("saveButton").style.display = "inline-block";
+}
 
+function handleNewClick(){
+    makeEditable();
+    hideButtons();
+    blankFields();
+    var buttonHtml = "<button class=\"btn btn-primary btn-lg\" onclick=\"handleNewSave()\">Save</button>";
+    buttonHtml += "<button class=\" btn btn-warning btn-lg btn-cancle\" onclick=\"handleCancelSave()\">Cancel</button>";
+    document.getElementById("saveButton").innerHTML = buttonHtml;
+    document.getElementById("saveButton").style.display = "inline-block";
+}
 
+function handleDeleteClick(){
+    deleteChar();
+}
 
+function handleEditSave(jediId){
+    putChar(jediId);
+    makeReadOnly();
+    showButtons();
+    //handleOnLoad();
+
+}
+
+function handleNewSave(){
+    postChar();
+    makeReadOnly();
+    showButtons();
+    blankFields();
+    //handleOnLoad();
+}
 function populateForm(){
     console.log(myChar)
     // document.getElementById("jediId").value =myChar.jediId;
     document.getElementById("name").value =myChar.name;
     document.getElementById("lightsaberColor").value =myChar.lightsaberColor;
-    document.getElementById("home").value =myChar.home;
+    document.getElementById("home").value =myChar.homeworld;
     document.getElementById("born").value =myChar.born;
     document.getElementById("gender").value =myChar.gender;
     document.getElementById("rank").value =myChar.rank;
-    document.getElementById("nickname").value =myChar.nickname;
+    document.getElementById("nickname").value =myChar.nickName;
     document.getElementById("master").value =myChar.master;
     document.getElementById("padawan").value =myChar.padawan;
     document.getElementById("characterCover").value =myChar.characterURL;
@@ -39,6 +75,7 @@ function hideButtons(){
     document.getElementById("newButton").style.display = "none";
     document.getElementById("editButton").style.display = "none";
     document.getElementById("deleteButton").style.display = "none";
+    document.getElementById("saveButton").style.display = "none";
 
 }
 
@@ -46,10 +83,11 @@ function showButtons(){
     document.getElementById("newButton").style.display = "inline-block";
     document.getElementById("editButton").style.display = "inline-block";
     document.getElementById("deleteButton").style.display = "inline-block";
+    document.getElementById("saveButton").style.display = "inline-block";
 }
 
 function makeEditable(){
-    document.getElementById("jeidiId").readOnly = false;
+    //document.getElementById("jeidiId").readOnly = false;
     document.getElementById("name").readOnly = false;
     document.getElementById("lightsaberColor").readOnly = false;
     document.getElementById("home").readOnly = false;
